@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZenoNotes | Minimal Note Taking</title>
+    <meta name="description" content="A lightweight, beautiful note-taking app with zero login required">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      
+      @media (max-width: 768px) {
+        body {
+          overflow: auto;
+        }
+      }
+      
+      .loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+      }
+      
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(255,255,255,.3);
+        border-radius: 50%;
+        border-top-color: white;
+        animation: spin 1s ease-in-out infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <div class="loading">
+        <div style="text-align: center;">
+          <div class="spinner"></div>
+          <p style="margin-top: 20px;">ZenoNotes requires JavaScript to run.</p>
+        </div>
+      </div>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
